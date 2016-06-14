@@ -4,8 +4,8 @@
 \name{RSplitsTree-package}
 \alias{RSplitsTree}
 \alias{RSplitsTree-package}
-\title{TODO}
+\title{TODO add docs}
 \description{
-TODO
+TODO add docs
 }
 
