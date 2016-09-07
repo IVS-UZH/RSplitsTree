@@ -11,11 +11,11 @@ splitstree(dist, nexus.file = NULL, plot = FALSE,
 \arguments{
 \item{dist}{A distance object (usually of class 'dist')}
 
-\item{nexus.file}{A name of the file where the NEXUS file will be written to}
+\item{nexus.file}{A name of the file where the NEXUS file will be written to (see notes)}
 
 \item{plot}{Set this to 'PDF' or 'SVG' to automatically invoke SplitsTree4 and generate a graphics file}
 
-\item{splitstree.path}{Path to the SplitsTree4 binary}
+\item{splitstree.path}{Path to the SplitsTree4 binary (see notes)}
 }
 \value{
 The name of the generated NEXUS file
@@ -23,6 +23,21 @@ The name of the generated NEXUS file
 \description{
 Convert an object to SplitsTree-compatible NEXUS input
 and launch SplitsTree if required
+}
+\note{
+If the name of the output file (\code{nexus.file}) is omitted, the function attempts to derive
+the file name automatically. Beware that if the file with this name already exists, it will be 
+overwritten without a warning — so extra care needs to be taken if you have extra `.nex` files 
+in the output directory.
+
+If you are generating graphical output, the \code{splitstree.path} neeeds to point to the
+command-line
+executable of the SplitsTree4 package. The location and name of the executable is system- and 
+installation-dependent. The package attempts to guess the standard location for your system, but
+if it fails, please provide the path explicitly. Note that on as OS X, a suitable executable is
+located within the SpltisTree.app application bundle, with the path
+`SplitsTree.app/Contents/MacOS/JavaApplicationStub` (or alternatively, you can install the Linux 
+SplitsTree4 package on Mac to get an executable in /usr/local/bin/SplitsTree)
 }
 \examples{
 library(cluster)
