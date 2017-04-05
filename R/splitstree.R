@@ -116,14 +116,13 @@ splitstree <- function(dist, nexus.file = NULL, plot = FALSE, splitstree.path = 
     
     # plotting commands to be passed to splitstree
     splitstree_script <- paste0(
-    'EXECUTE file=', nexus.file, '\n',
-    'UPDATE\n',
-    'EXPORTGRAPHICS format=', plot, ' file=', plot.file, ' REPLACE=YES\n',
-     'QUIT')
+      "EXECUTE file='", file.path(getwd(), nexus.file), "'\n",
+      "EXPORTGRAPHICS format=", plot, " file='", file.path(getwd(), plot.file), "' REPLACE=yes\n",
+      "QUIT")
     
      # run splitstree
-     system(paste(splitstree.path, ' -g -S -i', nexus.file),
-            input = splitstree_script)    
+     cmd <- paste(splitstree.path, " -g")
+     system(cmd, input = splitstree_script)    
   }
 
   invisible(nexus.file)
