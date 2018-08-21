@@ -121,8 +121,9 @@ splitstree <- function(dist, nexus.file = NULL, plot = FALSE, splitstree.path = 
       "QUIT")
     
      # run splitstree
-     cmd <- paste(splitstree.path, " -g")
-     system(cmd, input = splitstree_script)    
+     system(paste(splitstree.path, ' +g false -S -i', nexus.file),
+            input = splitstree_script)    
+
   }
 
   invisible(nexus.file)
